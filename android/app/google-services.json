@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "470096980064",
+    "project_id": "qanunidb",
+    "storage_bucket": "qanunidb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470096980064:android:feab925dd9ed0f7b7dbb05",
+        "android_client_info": {
+          "package_name": "com.example.qanuni"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470096980064-i5gpcihlem3qk9ecpgtm5qg2dabosvrn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDors9dEYZ_icAtn0Std0OhzeQ1ZJ_11VQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470096980064-i5gpcihlem3qk9ecpgtm5qg2dabosvrn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
