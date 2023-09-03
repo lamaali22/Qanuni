@@ -85,7 +85,7 @@ flutter:
         - asset: fonts/Cairo/static/Cairo-ExtraLight.ttf
         - asset: fonts/Cairo/static/Cairo-Light.ttf
         - asset: fonts/Cairo/static/Cairo-Medium.ttf
-        - asset: fonts/Cairo/static/Cairo-Regular.ttf
+#        - asset: fonts/Cairo/static/Cairo-Regular.ttf
        
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
