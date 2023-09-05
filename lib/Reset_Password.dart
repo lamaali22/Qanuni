@@ -1,5 +1,7 @@
 import 'dart:ffi';
+//import 'dart:js';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class resetPassword extends StatefulWidget {
@@ -11,6 +13,51 @@ class resetPassword extends StatefulWidget {
 
 class _resetPasswordState extends State<resetPassword> {
   final _emailController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    super.dispose();
+  }
+
+  Future passwordReset() async {
+    try {
+      await FirebaseAuth.instance
+          .sendPasswordResetEmail(email: _emailController.text.trim());
+      showDialog(
+        context: this.context,
+        builder: (context) {
+          return AlertDialog(
+            content: Text("تم ارسال رابط تغيير كلمة المرور"),
+          );
+        },
+      );
+    } on FirebaseAuthException catch (e) {
+      print(e);
+      String formatMsg = "البريد الالكتروني الذي أدخلته غير صحيح";
+      String existMsg = "البريد الكتروني الذي ادخلته غير مسجّل ";
+      if (e.message.toString() == "The email address is badly formatted.") {
+        showDialog(
+          context: this.context,
+          builder: (context) {
+            return AlertDialog(
+              content: Text(formatMsg),
+            );
+          },
+        );
+      } else {
+        showDialog(
+          context: this.context,
+          builder: (context) {
+            return AlertDialog(
+              content: Text(existMsg),
+            );
+          },
+        );
+      }
+      //
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +109,7 @@ class _resetPasswordState extends State<resetPassword> {
           SizedBox(height: 30),
 
           MaterialButton(
-            onPressed: () {},
+            onPressed: (passwordReset),
             child: Text(
               'اعادة ضبط كلمة المرور',
               style: TextStyle(
